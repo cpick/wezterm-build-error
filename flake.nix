@@ -9,17 +9,13 @@
     in {
 
       packages.x86_64-darwin.default = pkgs.darwin.apple_sdk_11_0.callPackage (
-        { rustPlatform, perl, System }:
+        { rustPlatform }:
         rustPlatform.buildRustPackage {
           name = "wezterm-build-error";
           src = ./.;
           cargoLock = { lockFile = ./Cargo.lock; };
-          nativeBuildInputs = [ perl ];
-          buildInputs = [ System ];
         }
-      ) {
-        inherit (pkgs.darwin.apple_sdk_11_0.frameworks) System;
-      };
+      ) {};
 
     };
 }

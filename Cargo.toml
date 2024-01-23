@@ -1,8 +1,8 @@
 [package]
 name = "wezterm-build-error"
 version = "0.1.0"
+build = "build.rs"
 edition = "2021"
 
-[dependencies]
-openssl = { version = "0.10", features=["vendored"] }
-git2 = { version = "0.16", default-features = false, features = ["https"] }
+[build-dependencies]
+cc = "1.0.43"
