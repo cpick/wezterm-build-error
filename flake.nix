@@ -14,6 +14,7 @@
           name = "wezterm-build-error";
           src = ./.;
           cargoLock = { lockFile = ./Cargo.lock; };
+          buildInputs = [ pkgs.darwin.apple_sdk_11_0.Libsystem ];
         }
       ) {};
 
